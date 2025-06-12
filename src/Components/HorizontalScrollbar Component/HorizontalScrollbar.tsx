@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import IconGym from "../../assets/icons/gym.png";
+import IconGym from "../../assets/Icons/gym.png";
 
 export interface exerciseProps {
   id: number;
