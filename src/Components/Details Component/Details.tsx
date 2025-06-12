@@ -1,7 +1,7 @@
 import type { exerciseDetailsProps } from "../../Pages/Exercise Details Page/Exercise_Details";
 import BodyPartImage from "../../assets/Icons/body-part.png";
 import TargetImage from "../../assets/Icons/target.png";
-import EquipmentImage from "../../assets/icons/equipment.png";
+import EquipmentImage from "../../assets/Icons/equipment.png";
 import type { exerciseProps } from "../HorizontalScrollbar Component/HorizontalScrollbar";
 
 export default function Details({
