@@ -9,7 +9,15 @@ import { scrollToTop, toastSuccess } from "../../utils/utils";
 import { motion } from "framer-motion";
 import Logo from "../../assets/Images/Logo-nav.png";
 
-export default function Footer() {
+interface FooterProps {
+  setIsFooterVisible: (isFooterVisible: boolean) => void;
+  isFooterVisible: boolean;
+}
+
+export default function Footer({
+  setIsFooterVisible,
+  isFooterVisible
+}: FooterProps) {
   const location = useLocation();
 
   const [isItemName, setIsItemName] = useState<string | null>(null);
@@ -19,7 +27,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="relative overflow-hidden bottom-0 left-0 right-0 py-10 xl:px-40 md:px-10 xs:px-5 tracking-widest border-t-[3px] border-[var(--primary-color)] backdrop-blur-3xl shadow-md bg-[#FFFAFB] mt-7">
+    <footer className="relative overflow-hidden bottom-0 left-0 right-0 py-10 xl:px-40 md:px-10 xs:px-5 tracking-widest border-t-[3px] border-[var(--primary-color)] backdrop-blur-3xl shadow-md bg-[#FFFAFB]">
       <motion.div
         animate={{
           scale: [0.8, 1, 0.8],
@@ -89,6 +97,7 @@ export default function Footer() {
               className="flex items-center space-x-3 rtl:space-x-reverse hover:scale-105 transition-transform duration-500 ease-in-out"
               onClick={() => {
                 scrollToTop();
+                setIsFooterVisible(false);
               }}>
               <img
                 src={Logo}
@@ -138,6 +147,9 @@ export default function Footer() {
             ].map((item, index) => (
               <li key={index}>
                 <Link
+                  onClick={() => {
+                    setIsFooterVisible(false);
+                  }}
                   to={item.link}
                   title={item.title}
                   target={item.target}
@@ -168,7 +180,12 @@ export default function Footer() {
               className="py-4 px-3 w-80 rounded-xl outline-none ring-2 ring-[var(--primary-color)]"
               required
             />
-            <button type="submit" title="Subscribe">
+            <button
+              type="submit"
+              title="Subscribe"
+              onClick={() => {
+                setIsFooterVisible(false);
+              }}>
               <Button
                 title="Subscribe"
                 type="submit"
@@ -204,7 +221,10 @@ export default function Footer() {
                 <Link
                   to={item.itemLink}
                   key={item.itemName}
-                  onClick={() => scrollToTop()}>
+                  onClick={() => {
+                    scrollToTop();
+                    setIsFooterVisible(true);
+                  }}>
                   <p
                     className={`relative group text-[var(--text-color)] text-lg w-fit`}
                     onClick={() => handleItemName(item.itemName)}>
@@ -212,7 +232,8 @@ export default function Footer() {
                     <span
                       className={`${
                         isItemName === item.itemName &&
-                        location.pathname === item.itemLink
+                        location.pathname === item.itemLink &&
+                        isFooterVisible === true
                           ? "scale-x-100"
                           : "scale-x-0"
                       } pointer-events-none absolute bottom-0 left-0 w-full h-[2.5px] rounded-full bg-[var(--primary-color)] group-hover:scale-x-100 transition-transform duration-300`}
@@ -250,11 +271,13 @@ export default function Footer() {
                     className={`relative group text-[var(--text-color)] text-lg w-fit`}
                     onClick={() => {
                       handleItemName(item.itemName);
+                      setIsFooterVisible(true);
                     }}>
                     {item.itemName}
                     <span
                       className={`${
-                        (isItemName === item.itemName) === true
+                        (isItemName === item.itemName) === true &&
+                        isFooterVisible === true
                           ? "scale-x-100"
                           : "scale-x-0"
                       } pointer-events-none absolute bottom-0 left-0 w-full h-[2.5px] rounded-full bg-[var(--primary-color)] group-hover:scale-x-100 transition-transform duration-300`}
@@ -279,6 +302,9 @@ export default function Footer() {
         <Link
           to="https://www.linkedin.com/in/kyrillos-samy-38b110222/"
           target="_blank"
+          onClick={() => {
+            setIsFooterVisible(false);
+          }}
           className="hover:text-[var(--primary-color)] border-b-[3px] border-[var(--primary-color)] rounded-md p-1">
           Kyrillos Samy
         </Link>

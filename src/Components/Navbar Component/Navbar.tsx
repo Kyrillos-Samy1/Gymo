@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import Logo from "../../assets/Images/Logo-nav.png";
 
-export default function Navbar() {
+export default function Navbar({
+  setIsFooterVisible
+}: {
+  setIsFooterVisible: (isFooterVisible: boolean) => void;
+}) {
   return (
     <nav className="flex xs:gap-[60px] md:gap-[122px] xs:mt-[20px] md:mt-[32px] px-5 tracking-wider">
       <Link to="/">
@@ -14,6 +18,9 @@ export default function Navbar() {
       <div className="flex items-center gap-[30px] text-[24px]">
         <div>
           <Link
+            onClick={() => {
+              setIsFooterVisible(false);
+            }}
             to="/"
             className="text-[var(--text-color)] border-b-[3px] border-[var(--primary-color)] ">
             Home
@@ -24,6 +31,8 @@ export default function Navbar() {
           <Link
             to="/"
             onClick={() => {
+              setIsFooterVisible(false);
+
               if (window.innerWidth < 640) {
                 window.scrollTo({
                   top: 1260,

@@ -29,7 +29,7 @@ export default function Exercises({
     setCurrentPage(value);
     if (window.innerWidth < 640) {
       window.scrollTo({
-        top: 1290,
+        top: 1250,
         behavior: "smooth"
       });
     } else if (window.innerWidth >= 640 && window.innerWidth < 1024) {
@@ -102,7 +102,7 @@ export default function Exercises({
 
         {/* Pagination */}
         {exercises.length === 0 ? (
-          <div className="flex flex-col items-center justify-center p-6 py-36 rounded-2xl border border-dashed border-[var(--primary-color)]">
+          <div className="flex flex-col items-center justify-center p-6 py-36 rounded-2xl border border-dashed border-[var(--primary-color)] mb-7">
             <div className="flex items-center justify-center border-2 border-[var(--primary-color)] rounded-full mb-2">
               <ClearOutlinedIcon
                 className="text-[var(--primary-color)]"
@@ -117,7 +117,7 @@ export default function Exercises({
             </p>
           </div>
         ) : (
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center mb-7">
             <Pagination
               count={Math.ceil(exercises.length / exercisesPerPage)}
               color="standard"
