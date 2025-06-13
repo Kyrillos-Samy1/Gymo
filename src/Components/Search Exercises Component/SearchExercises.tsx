@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import HorizontalScrollbar from "../HorizontalScrollbar Component/HorizontalScrollbar";
 
 export interface exerciseProps {
@@ -148,14 +149,63 @@ export default function SearchExercises({
     }
   };
 
+  const containserH2 = {
+    hidden: {},
+    visible: {
+      transition: {
+        duration: 1.5,
+        staggerChildren: 0.4,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const containerSpan = {
+    hidden: { opacity: 0, y: 20, filter: "blur(10px)" },
+    visible: {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      transition: { duration: 0.5, ease: "easeOut" }
+    }
+  };
+
   return (
     <>
       <div className="flex flex-col items-center justify-center mt-[37px] p-[20px] tracking-wider">
-        <h2 className="text-center lg:text-[44px] xs:text-[25px] font-bold mb-[50px] text-[var(--text-color)]">
-          Awesome Exercises You <br /> Should Know
-        </h2>
+        <motion.h2
+          variants={containserH2}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="text-center lg:text-[44px] xs:text-[25px] font-bold mb-[50px] text-[var(--text-color)]">
+          <div className="flex flex-wrap justify-center gap-2">
+            {["Awesome", "Exercises", "You"].map((word, indexWord) => (
+              <motion.span
+                key={indexWord}
+                variants={containerSpan}
+                className="inline-block">
+                {word}
+              </motion.span>
+            ))}
+          </div>
+          <div className="flex flex-wrap justify-center gap-2">
+            {["Should", "Know"].map((word, indexWord) => (
+              <motion.span
+                key={indexWord + 3}
+                variants={containerSpan}
+                className="inline-block">
+                {word}
+              </motion.span>
+            ))}
+          </div>
+        </motion.h2>
 
-        <form
+        <motion.form
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.5, ease: "easeOut", delay: 0.5 }}
           className="relative mb-[72px]"
           onSubmit={(e) => {
             e.preventDefault();
@@ -167,7 +217,7 @@ export default function SearchExercises({
             value={searchQuery}
             required
             onChange={(e) => setSearchQuery(e.target.value.toLowerCase())}
-            className=" h-[55px] md:p-4 xs:px-2 bg-white font-medium focus:outline-none rounded 1xl:w-[1170px] lg:w-[900px] md:w-[550px] xs:w-[340px] border-2"
+            className="h-[55px] md:p-4 xs:px-2 bg-white font-medium focus:outline-none rounded 1xl:w-[1170px] lg:w-[900px] md:w-[550px] xs:w-[340px] border-2"
           />
 
           <button
@@ -177,7 +227,7 @@ export default function SearchExercises({
             className="absolute right-[2px] top-[50%] translate-y-[-50%] h-[92%] md:px-8 xs:px-4 bg-[var(--primary-color)] hover:bg-[var(--hover-color)] transition-all duration-200 ease-in-out rounded-[2px] text-white font-medium text-lg">
             Search
           </button>
-        </form>
+        </motion.form>
 
         <div className="relative w-[100%] p-[20px] ">
           <HorizontalScrollbar

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ClearOutlinedIcon from "@mui/icons-material/ClearOutlined";
+import { motion } from "framer-motion";
 
 export interface exerciseVideosProps {
   data: {
@@ -91,7 +92,12 @@ export default function ExerciseVideos({
     <>
       {/* //!Exercise Youtube Videos Part! */}
       <div className="lg:mt-[80px] xs:mt-[20px] p-[20px] lg:px-[53px] xs:px-[20px]">
-        <div className="w-fit text-[var(--text-color)]">
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="w-fit text-[var(--text-color)]">
           <h3 className="md:text-4xl xs:text-2xl text-center xs:mx-auto md:mx-0">
             Watch{" "}
             <span className="capitalize text-[var(--primary-color)]">
@@ -100,11 +106,16 @@ export default function ExerciseVideos({
             Exercise Videos
           </h3>
           <div className="w-[90%] h-[2px] mt-1 bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent mx-auto" />
-        </div>
+        </motion.div>
 
         {exerciseVideos?.data.contents?.length === 0 ? (
           <>
-            <div className="flex flex-col items-center justify-center p-6 py-36 mt-14 rounded-2xl border border-dashed border-[var(--primary-color)]">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              className="flex flex-col items-center justify-center p-6 py-36 mt-14 rounded-2xl border border-dashed border-[var(--primary-color)]">
               <div className="flex items-center justify-center border-2 border-[var(--primary-color)] rounded-full mb-2">
                 <ClearOutlinedIcon
                   className="text-[var(--primary-color)]"
@@ -117,7 +128,7 @@ export default function ExerciseVideos({
               <p className="text-[14px] text-gray-400 text-center mt-2">
                 Oops! No videos available at the moment. Please try again later.{" "}
               </p>
-            </div>
+            </motion.div>
           </>
         ) : (
           <>
@@ -125,9 +136,17 @@ export default function ExerciseVideos({
               {exerciseVideos?.data.contents
                 ?.slice(4, 10)
                 ?.map((content, indexContent) => (
-                  <div
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 1,
+                      ease: "easeOut",
+                      delay: indexContent * 0.3
+                    }}
                     key={indexContent}
-                    className="group/youtube w-[100%] shadow flex justify-center items-center p-3 rounded-xl overflow-hidden border-t-[3px] border-[var(--primary-color)]">
+                    className="group/youtube w-[100%] lg:h-[405px] xs:h-[305px] shadow flex justify-center items-center p-3 rounded-xl overflow-hidden border-t-[3px] border-[var(--primary-color)]">
                     <Link
                       to={`https://www.youtube.com/watch?v=${content.video.videoId}`}
                       target="_blank"
@@ -151,7 +170,7 @@ export default function ExerciseVideos({
                         )}
                       </h5>
                     </Link>
-                  </div>
+                  </motion.div>
                 ))}
             </div>
           </>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 interface SimilarExercisesProps {
   name: string;
@@ -154,8 +155,13 @@ export default function SimilarExercises({
   return (
     <>
       {/* //!Target Muscle Part! */}
-      <div className="lg:mt-[40px] xs:mt-[20px] p-[20px] lg:px-[53px] xs:px-[20px]">
-        <div className="mb-[33px] w-fit xs:mx-auto md:mx-0">
+      <div className="lg:mt-[40px] xs:mt-[20px] p-[20px] lg:px-[53px] xs:px-[20px] overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="mb-[33px] w-fit xs:mx-auto md:mx-0">
           <h3 className="md:text-4xl xs:text-2xl text-center capitalize text-[var(--text-color)]">
             Exercises that target the same muscle group —{" "}
             <span className="text-[var(--primary-color)]">
@@ -163,9 +169,14 @@ export default function SimilarExercises({
             </span>{" "}
           </h3>
           <div className="w-[90%] h-[2px] mt-1 bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent mx-auto" />
-        </div>
+        </motion.div>
 
-        <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 xs:grid-cols-1 gap-10 my-14">
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 xs:grid-cols-1 gap-10 my-14">
           {targetMuscle?.data
             ?.slice(0, 8)
             ?.map((content, indexTargetMuscle) => (
@@ -181,7 +192,7 @@ export default function SimilarExercises({
                       <img
                         src={content.gifUrl}
                         alt={content.name}
-                        className="rounded-xl overflow-hidden object-cover w-full"
+                        className="rounded-xl overflow-hidden object-contain w-full h-[350px] mx-auto"
                       />
                       <h5 className="mt-4 text-lg font-medium capitalize text-[var(--text-color)]">
                         {content.name.slice(0, 30)}
@@ -194,20 +205,30 @@ export default function SimilarExercises({
                 )}
               </>
             ))}
-        </div>
+        </motion.div>
       </div>
 
       {/* //!Equipment Part! */}
-      <div className="lg:mt-[40px] xs:mt-[20px] p-[20px] lg:px-[53px] xs:px-[20px]">
-        <div className="mb-[33px] w-fit xs:mx-auto md:mx-0">
+      <div className="lg:mt-[40px] xs:mt-[20px] p-[20px] lg:px-[53px] xs:px-[20px] overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="mb-[33px] w-fit xs:mx-auto md:mx-0">
           <h3 className="md:text-4xl xs:text-2xl text-center capitalize text-[var(--text-color)]">
             Exercises that target the same equipment —{" "}
             <span className="text-[var(--primary-color)]">{equipmentName}</span>
           </h3>
           <div className="w-[90%] h-[2px] mt-1 bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent mx-auto" />
-        </div>
+        </motion.div>
 
-        <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 xs:grid-cols-1 gap-10 my-14">
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 xs:grid-cols-1 gap-10 my-14">
           {equipment?.data?.slice(0, 8)?.map((content, indexTargetMuscle) => (
             <>
               {name !== content.name && (
@@ -221,7 +242,7 @@ export default function SimilarExercises({
                     <img
                       src={content.gifUrl}
                       alt={content.name}
-                      className="rounded-xl overflow-hidden object-cover w-full"
+                      className="rounded-xl overflow-hidden object-contain w-full h-[350px] mx-auto"
                     />
                     <h5 className="mt-4 text-lg font-medium capitalize text-[var(--text-color)]">
                       {content.name.slice(0, 30)}
@@ -240,7 +261,7 @@ export default function SimilarExercises({
               )}
             </>
           ))}
-        </div>
+        </motion.div>
       </div>
     </>
   );

@@ -2,6 +2,7 @@ import type { exerciseProps } from "../Search Exercises Component/SearchExercise
 import { Link } from "react-router-dom";
 import { Pagination } from "@mui/material";
 import ClearOutlinedIcon from "@mui/icons-material/ClearOutlined";
+import { motion } from "framer-motion";
 export default function Exercises({
   exercises,
   setBodyPart,
@@ -49,16 +50,26 @@ export default function Exercises({
     <>
       <div
         id="exercises"
-        className="md:ml-[50px] p-5 lg:mt-[110px] xs:mt-[50px] tracking-wider">
-        <div className="mb-[46px] w-fit">
+        className="md:ml-[50px] p-5 lg:mt-[110px] xs:mt-[50px] tracking-wider overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-[46px] w-fit">
           <h3 className=" md:text-[40px] xs:text-[30px] text-[var(--text-color)] font-semibold">
             Showing Results
           </h3>
           <div className="w-[90%] h-[2px] bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent mx-auto" />
-        </div>
+        </motion.div>
 
         {/* //!Exercises */}
-        <div className="flex flex-wrap justify-center gap-x-[50px] gap-y-[25px] mb-[30px] w-full">
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
+          className="flex flex-wrap justify-center gap-x-[50px] gap-y-[25px] mb-[30px] w-full">
           {currentExercises?.map((exercise, index) => (
             <div
               key={index}
@@ -98,7 +109,7 @@ export default function Exercises({
               </Link>
             </div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Pagination */}
         {exercises.length === 0 ? (
@@ -117,20 +128,23 @@ export default function Exercises({
             </p>
           </div>
         ) : (
-          <div className="flex items-center justify-center mb-7">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="flex items-center justify-center mb-7">
             <Pagination
               count={Math.ceil(exercises.length / exercisesPerPage)}
               color="standard"
               variant="outlined"
               size={window.innerWidth < 640 ? "medium" : "large"}
               defaultPage={1}
-              // showFirstButton
-              // showLastButton
               page={currentPage}
               className="flex items-center justify-between"
               onChange={paginate}
             />
-          </div>
+          </motion.div>
         )}
       </div>
     </>

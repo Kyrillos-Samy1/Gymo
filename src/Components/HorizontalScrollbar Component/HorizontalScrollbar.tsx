@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import IconGym from "../../assets/Icons/gym.png";
+import { motion } from "framer-motion";
 
 export interface exerciseProps {
   id: number;
@@ -73,7 +74,11 @@ export default function HorizontalScrollbar({
   return (
     <div className="relative w-full">
       {/* Arrow Left */}
-      <button
+      <motion.button
+        initial={{ opacity: 0, x: -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
         type="button"
         disabled={
           (activeIndex === 1 && window.innerWidth > 768) ||
@@ -93,15 +98,19 @@ export default function HorizontalScrollbar({
           size={24}
           className="text-[var(--primary-color)] group-hover/arrow-left:scale-110 transition-transform duration-300 ease-in-out"
         />
-      </button>
+      </motion.button>
 
       {/* Scrollable List */}
-      <div
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1, ease: "easeOut" }}
         ref={scrollRef}
         className="overflow-x-auto scroll-smooth scrollbar-hide whitespace-nowrap w-[100%] tracking-wider">
         <div className="flex gap-4 md:px-8">
           {data?.map((item, index) => (
-            <button
+            <motion.button
               key={index}
               ref={(el) => {
                 itemRefs.current[index] = el;
@@ -148,13 +157,17 @@ export default function HorizontalScrollbar({
                   {item}
                 </span>
               </div>
-            </button>
+            </motion.button>
           ))}
         </div>
-      </div>
+      </motion.div>
 
       {/* Arrow Right */}
-      <button
+      <motion.button
+        initial={{ opacity: 0, x: 30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
         type="button"
         disabled={
           (activeIndex === data.length - 2 && window.innerWidth > 768) ||
@@ -175,7 +188,7 @@ export default function HorizontalScrollbar({
           size={24}
           className="text-[var(--primary-color)] group-hover/arrow-right:scale-110 transition-transform duration-300 ease-in-out"
         />
-      </button>
+      </motion.button>
     </div>
   );
 }
