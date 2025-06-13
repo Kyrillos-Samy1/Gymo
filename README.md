@@ -155,8 +155,4 @@ Built with sweat & style by **Kyrillos Samy Doksh Hanna**
 
 ---
 
-> **"Train smart, code smarter."**  
-
-> Gymo – Where fitness meets frontend. 💪
-
 > **Still learning, still building, always improving.**
