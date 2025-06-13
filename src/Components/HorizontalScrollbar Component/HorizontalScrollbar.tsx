@@ -75,8 +75,8 @@ export default function HorizontalScrollbar({
     <div className="relative w-full">
       {/* Arrow Left */}
       <motion.button
-        initial={{ opacity: 0, x: -30 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ x: -30 }}
+        whileInView={{ x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: "easeOut" }}
         type="button"
@@ -164,8 +164,8 @@ export default function HorizontalScrollbar({
 
       {/* Arrow Right */}
       <motion.button
-        initial={{ opacity: 0, x: 30 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ x: 30 }}
+        whileInView={{ x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: "easeOut" }}
         type="button"
