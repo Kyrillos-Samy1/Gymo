@@ -9,7 +9,7 @@ const NotFound = () => {
     <div className="not-found-container relative p-1 flex flex-col items-center justify-center h-dvh overflow-hidden">
       {/* Glowing gradient balls. */}
       <motion.div
-        className="pointer-events-none absolute blur-sm w-32 h-32 rounded-full bg-gradient-to-tr from-[#EAD4DA] to-[#EAD4DA] -bottom-16 left-0"
+        className="pointer-events-none absolute blur-sm w-32 h-32 rounded-full bg-gradient-to-tr from-[#EAD4DA] to-[#EAD4DA] -bottom-16 left-0 -z-10"
         animate={{
           scale: [0.8, 1, 0.8],
           opacity: [0.9, 1, 0.9],

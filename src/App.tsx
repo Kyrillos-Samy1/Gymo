@@ -5,6 +5,10 @@ import Layout from "./Components/Layout Component/Layout";
 import Exercise_Details from "./Pages/Exercise Details Page/Exercise_Details";
 import NotFound from "./Components/NotFound Component/NotFound";
 import { useEffect, useState } from "react";
+import Privacy from "./Pages/Privacy Component/Privacy";
+import Terms from "./Pages/Terms Component/Terms";
+import ContactUs from "./Pages/Contact Us Component/Contact_Us";
+import { ToastContainer } from "react-toastify";
 
 export interface exerciseProps {
   id: number;
@@ -91,6 +95,27 @@ function App() {
     };
   }, [isLoading]);
 
+  const date = new Date();
+  const day = date.getDate();
+  const year = date.getFullYear();
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
+  const monthName = monthNames[date.getMonth()];
+
+  const formattedDate = `${monthName} ${day}, ${year}`;
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -124,6 +149,35 @@ function App() {
           )
         },
         {
+          path: "/privacy",
+          element: (
+            <Privacy
+              companyName="Gymo"
+              effectiveDate={`${formattedDate}`}
+              contactEmail="kyrillossamy@outlook.com"
+              contactPhone="+20-1271470997"
+              contactAddress="Maadi, Cairo, Egypt"
+              termsOfServiceUrl="/terms"
+            />
+          )
+        },
+        {
+          path: "/terms",
+          element: (
+            <Terms
+              companyName="Gymo"
+              effectiveDate={`${formattedDate}`}
+              contactEmail="kyrillossamy@outlook.com"
+              contactPhone="+20-1271470997"
+              contactAddress="Maadi, Cairo, Egypt"
+            />
+          )
+        },
+        {
+          path: "/contact",
+          element: <ContactUs />
+        },
+        {
           path: "*",
           element: <NotFound />
         }
@@ -134,6 +188,7 @@ function App() {
   return (
     <>
       <RouterProvider router={router} />
+      <ToastContainer position="top-right" />
     </>
   );
 }
