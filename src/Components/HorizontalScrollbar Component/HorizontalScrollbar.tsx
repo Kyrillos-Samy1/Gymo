@@ -34,7 +34,7 @@ export default function HorizontalScrollbar({
   exercisesFiltered
 }: HorizontalScrollbarProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(1);
   const itemRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
   const scrollToIndex = (index: number) => {
