@@ -151,7 +151,7 @@ export default function SearchExercises({
   return (
     <>
       <div className="flex flex-col items-center justify-center mt-[37px] p-[20px] tracking-wider">
-        <h2 className="text-center lg:text-[44px] xs:text-[30px] font-bold mb-[50px]">
+        <h2 className="text-center lg:text-[44px] xs:text-[25px] font-bold mb-[50px] text-[var(--text-color)]">
           Awesome Exercises You <br /> Should Know
         </h2>
 

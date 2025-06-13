@@ -24,7 +24,22 @@ export default function Navbar() {
           <Link
             to="/"
             onClick={() => {
-              window.scrollTo({ top: 1790, left: 100, behavior: "smooth" });
+              if (window.innerWidth < 640) {
+                window.scrollTo({
+                  top: 1260,
+                  behavior: "smooth"
+                });
+              } else if (window.innerWidth >= 640 && window.innerWidth < 1024) {
+                window.scrollTo({
+                  top: 1220,
+                  behavior: "smooth"
+                });
+              } else {
+                window.scrollTo({
+                  top: 1790,
+                  behavior: "smooth"
+                });
+              }
             }}
             className="text-[var(--text-color)] cursor-pointer">
             Exercises
