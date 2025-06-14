@@ -1,6 +1,6 @@
 # 🏋️‍♂️ Gymo
 
-**Gymo** is a dynamic fitness-focused web application designed to help users explore, filter, and learn about gym exercises. It offers a seamless user experience with categorized GIFs, search functionality, and detailed pages packed with insights, related content, and video demonstrations. Whether you're a beginner or a pro, **Gymo** makes discovering your next workout move visual, interactive, and educational.
+**Gymo** is a dynamic fitness-focused web application designed to help users explore, filter, and learn about gym exercises. It offers a seamless user experience with categorized GIFs, search functionality, detailed pages packed with insights, related content, and video demonstrations. Whether you're a beginner or a pro, **Gymo** makes discovering your next workout move visual, interactive, and educational.
 
 ---
 
@@ -100,7 +100,7 @@ Here’s a sneak peek of **Gymo** in action:
 ![Gymo Mobile Preview](./src/assets/previews/mobile-preview/1-mobile-preview.png)
 ![Gymo Mobile Preview](./src/assets/previews/mobile-preview/2-mobile-preview.png)
 
-> 🎥 Want more? Hover animations, color variants, and dynamic video previews come alive in the full app!
+> 🎥 Want more? Hover animations, color variants, and dynamic GIF previews come alive in the full app!
 
 ---
 
@@ -141,7 +141,7 @@ All source code and media assets are owned and maintained by **Kyrillos Samy Dok
 
 📄 Licensed under the [MIT License](./LICENSE).
 
-> For commercial inquiries, collaborations, or special permissions, please contact me directly at: `kyrillossamy@outlook.com`
+> For commercial inquiries, collaborations, or special permissions, please get in touch with me directly at: `kyrillossamy@outlook.com`
 
 ---
 
