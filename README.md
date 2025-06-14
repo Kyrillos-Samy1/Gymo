@@ -147,11 +147,11 @@ All source code and media assets are owned and maintained by **Kyrillos Samy Dok
 
 ## 💬 Contact
 
-Built with sweat & style by **Kyrillos Samy Doksh Hanna**  
+Crafted with vision and style by **Kyrillos Samy Doksh Hanna**  
 📧 Email: `kyrillossamy@outlook.com`  
 📱 Phone: `+20-1271470997`  
 🎖️ Nickname: `Empire Coder`  
-🌍 Egypt
+🌍 Based in Egypt
 
 ---
 
