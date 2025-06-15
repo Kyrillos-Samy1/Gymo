@@ -34,9 +34,8 @@
 | Frontend     | React.js, Vite, TypeScript    |
 | Styling      | Tailwind CSS                  |
 | Routing      | React Router DOM              |
-| Animation    | Framer Motion (Optional)      |
-| State Mgmt   | Redux Toolkit                 |
-| APIs         | ExerciseDB, YouTube API       |
+| Animation    | Framer Motion                 |
+| APIs         | Rapid API                     |
 | Optimization | Lazy Loading                  |
 
 ---
