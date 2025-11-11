@@ -1,33 +1,33 @@
-# 🏋️‍♂️ Gymo
+# Gymo
 
 **Gymo** is a dynamic fitness-focused web application designed to help users explore, filter, and learn about gym exercises. It offers a seamless user experience with categorized GIFs, search functionality, detailed pages packed with insights, related content, and video demonstrations. Whether you're a beginner or a pro, **Gymo** makes discovering your next workout move visual, interactive, and educational.
 
 ---
 
-## 🚀 Live Preview
+## Live Preview
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Gymo-2E8B57?style=for-the-badge&logo=vercel&logoColor=white)](https://gymo-sigma.vercel.app/)  
 
 ---
 
-## 🎯 Features
+## Features
 
-- 🏋️‍♀️ **Full Exercise Library** with engaging GIFs to demonstrate each workout in action  
-- 🔍 **Search by Exercise Name** to instantly find your desired move  
-- 🧩 **Body Part Filtering** to narrow down exercises based on target areas like chest, legs, abs, etc.  
-- 👆 **Click-to-Details Navigation**: Tapping any GIF reveals a detailed view of the exercise  
-- 📋 **Exercise Details Page** includes:
-  - 💪 Targeted muscle groups
-  - 🔄 Equipment used
-  - 📝 Exercise instructions
-- 🎥 **YouTube Video Tutorials**: Embedded instructional content to guide proper form  
-- 🔄 **Related Muscle Groups** shown below each exercise to expand workout variations  
-- 📸 **Similar Exercises Using Same Equipment**: Discover other moves using the same gear  
-- 💡 **Clean UX/UI** built with React and Tailwind CSS for smooth and consistent interactions
+- **Full Exercise Library** with engaging GIFs to demonstrate each workout in action  
+- **Search by Exercise Name** to instantly find your desired move  
+- **Body Part Filtering** to narrow down exercises based on target areas like chest, legs, abs, etc.  
+- **Click-to-Details Navigation**: Tapping any GIF reveals a detailed view of the exercise  
+- **Exercise Details Page** includes:
+  - Targeted muscle groups
+  - Equipment used
+  - Exercise instructions
+- **YouTube Video Tutorials**: Embedded instructional content to guide proper form  
+- **Related Muscle Groups** shown below each exercise to expand workout variations  
+- **Similar Exercises Using Same Equipment**: Discover other moves using the same gear  
+- **Clean UX/UI** built with React and Tailwind CSS for smooth and consistent interactions
 
 ---
 
-## 🧠 Tech Stack
+## Tech Stack
 
 | Layer        | Tech Used                     |
 |--------------|-------------------------------|
@@ -40,10 +40,10 @@
 
 ---
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
-📦 Gymo
+Gymo
 ├── public                     
 │   └── ...
 ├── src
@@ -65,9 +65,9 @@
 
 ---
 
-## 📌 Pages Overview
+## Pages Overview
 
-### 🏠 Home Page
+### Home Page
 
 - Displays all available exercise GIFs  
 - Includes:  
@@ -75,7 +75,7 @@
   - Live search bar  
   - Scroll-to-view interactivity  
 
-### 📄 Exercise Details Page
+### Exercise Details Page
 
 - Title & animated GIF  
 - Muscle group, target & equipment  
@@ -85,25 +85,25 @@
 
 ---
 
-## 📸 Previews
+## Previews
 
 Here’s a sneak peek of **Gymo** in action:
 
-### 🖼️ Desktop View
+### Desktop View
 
 ![Gymo Desktop Preview](./src/assets/previews/desktop-preview/1-desktop-preview.png)
 ![Gymo Desktop Preview](./src/assets/previews/desktop-preview/2-desktop-preview.png)
 
-### 📱 Mobile View
+### Mobile View
 
 ![Gymo Mobile Preview](./src/assets/previews/mobile-preview/1-mobile-preview.png)
 ![Gymo Mobile Preview](./src/assets/previews/mobile-preview/2-mobile-preview.png)
 
-> 🎥 Want more? Hover animations, color variants, and dynamic GIF previews come alive in the full app!
+> Want more? Hover animations, color variants, and dynamic GIF previews come alive in the full app!
 
 ---
 
-## ⚙️ Getting Started
+## Getting Started
 
 1. Clone the repo:
 
@@ -131,26 +131,26 @@ npm run dev
 
 ---
 
-## 🔐 Legal Notice & Usage Policy
+## Legal Notice & Usage Policy
 
 This project is intended for **educational and portfolio purposes only**.  
 All source code and media assets are owned and maintained by **Kyrillos Samy Doksh Hanna**.
 
-🚫 **Unauthorized use, reproduction, or distribution of this code for commercial purposes is strictly prohibited**.
+**Unauthorized use, reproduction, or distribution of this code for commercial purposes is strictly prohibited**.
 
-📄 Licensed under the [MIT License](./LICENSE).
+Licensed under the [MIT License](./LICENSE).
 
 > For commercial inquiries, collaborations, or special permissions, please get in touch with me directly at: `kyrillossamy@outlook.com`
 
 ---
 
-## 💬 Contact
+## Contact
 
 Crafted with vision and style by **Kyrillos Samy Doksh Hanna**  
-📧 Email: `kyrillossamy@outlook.com`  
-📱 Phone: `+20-1271470997`  
-🎖️ Nickname: `Empire Coder`  
-🌍 Based in Egypt
+Email: `kyrillossamy@outlook.com`  
+Phone: `+20-1271470997`  
+Nickname: `Empire Coder`  
+Based in Egypt
 
 ---
 
